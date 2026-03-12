@@ -1,45 +1,105 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAk script </title>
+    <title>Interactive Modern Web</title>
+    <style>
+        /* CSS: The "Beautiful" Part */
+        :root {
+            --bg-color: #f0f2f5;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text-color: #1a1a1a;
+            --primary-accent: #6366f1;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-color: #f8fafc;
+            --primary-accent: #818cf8;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: all 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Glassmorphism Card */
+        .container {
+            padding: 3rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .btn {
+            background-color: var(--primary-accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:active { transform: scale(0.95); }
+
+        .toggle-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome</h1>
+
+    <div class="toggle-container">
+        <button class="btn" onclick="toggleTheme()">Switch Mode</button>
+    </div>
+
+    <div class="container">
+        <h1>Hello World</h1>
+        <p>This is a modern, interactive interface built with clean code.</p>
+        <button class="btn" onclick="showAlert()">Click Me!</button>
+    </div>
+
+    <script>
+        /* JavaScript: The "Interaction" Part */
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+            }
+        }
+
+        function showAlert() {
+            alert("Interaction successful! You've triggered a JavaScript function.");
+        }
+    </script>
 </body>
 </html>
-<body>
-its time
-<p>KOminn is a good man hes helping people  alots
-</p>
-<a href="https://youtu.be/dQw4w9WgXcQ?si=LB4APxDojPhYpXWp" title="Click it">
-    DONT click this
-
-</a>
-<img src="SHREK.png.webp" height="300" title="wow shexy SHREK" alt="this is a bad picture">
-<video src="nezha-six-arms-moewalls-com.mp4" width="300" controls loop muted> 
-</video>
-<h4>List of good things that MIN did in past to help people</h4>
-<ul>
-    <li>BUy ice Cream for  YOu</li>
-    <li>Eat your burgur</li>
-</ul>
-<h4>skibidi</h4>
-<ol>
-    <li>ttt</li>
-    <li>skibdidu</li>
-    <li>googaagooogaaa</li>
-</ol>
-
-
-
-
-
-
-
-
-
-
-
-</body>
-
